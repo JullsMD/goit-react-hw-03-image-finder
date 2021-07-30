@@ -6,7 +6,7 @@ import ImageGallery from './Components/ImageGallery/ImageGallery';
 import Modal from './Components/Modal/Modal';
 import Button from './Components/Button/Button';
 import Loader from 'react-loader-spinner';
-
+import { Toaster } from 'react-hot-toast';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import css from './Components/Loader/Loader.module.css';
 class App extends Component {
@@ -69,6 +69,7 @@ class App extends Component {
     return (
       <>
         <Searchbar onSubmit={this.handleSubmit} />
+        <Toaster />
         {loading && (
           <Loader
             className={css.loader}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Searchbar.module.css';
-
+import toast from 'react-hot-toast';
 class Searchbar extends Component {
   state = {
     query: '',
@@ -10,7 +10,10 @@ class Searchbar extends Component {
   handleSubmit = e => {
     e.preventDefault();
     if (this.state.query.trim() === '') {
-      return alert('Where is your query?');
+      return toast.loading('Where is your query?', {
+        duration: 4000,
+        position: 'top-center',
+      });
     }
     this.props.onSubmit(this.state.query);
     this.setState({ query: '' });
