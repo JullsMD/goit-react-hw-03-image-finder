@@ -65,10 +65,9 @@ class App extends Component {
   };
 
   render() {
-    const { images, loading, selectedImg, showModal, error } = this.state;
+    const { images, loading, selectedImg, showModal } = this.state;
     return (
       <>
-        {error && alert('NOT FOUND, try MORE...')}
         <Searchbar onSubmit={this.handleSubmit} />
         {loading && (
           <Loader
