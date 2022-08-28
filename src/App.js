@@ -70,18 +70,19 @@ class App extends Component {
         <Searchbar onSubmit={this.handleSubmit} />
         <Toaster />
         {loading && (
-          <TailSpin
-            className={css.loader}
-            height={80}
-            width={80}
-            color="#00BFFF"
-            ariaLabel="tail-spin-loading"
-            radius={1}
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-            timeout={5000}
-          />
+          <div className={css.loader}>
+            <TailSpin
+              height={80}
+              width={80}
+              color="#00BFFF"
+              ariaLabel="tail-spin-loading"
+              radius={1}
+              wrapperStyle={{}}
+              wrapperClass=""
+              visible={true}
+              timeout={5000}
+            />
+          </div>
         )}
         <ImageGallery images={images} onSelect={this.handleSelectImage} />
         {images.length > 0 && <Button fetchImages={this.fetchImages} />}
